@@ -1,25 +1,24 @@
 package com.example.hospitalRecords.serviceIMPL;
 
-import com.example.hospitalRecords.entity.DoctorPersonalDetails;
-import com.example.hospitalRecords.requestDTO.DoctorDesignationRegister;
-import com.example.hospitalRecords.requestDTO.DoctorPersonalDetailsRegister;
+import com.example.hospitalRecords.entity.DoctorPersonalDetailsEntity;
+import com.example.hospitalRecords.requestDTO.DoctorPersonalDetailsRegisterDTO;
 import com.example.hospitalRecords.serviceInterface.DoctorPersonalDetailService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
-import static org.hibernate.query.sqm.tree.SqmNode.log;
+import java.time.LocalDate;
 
 @Slf4j
 @Service
 public class DoctorPersonalDetailsServiceIMPL implements DoctorPersonalDetailService {
 
-    public DoctorPersonalDetails register(DoctorPersonalDetailsRegister doctorPersonalDetailsRegister){
-        DoctorPersonalDetails doctorPersonalDetails = new DoctorPersonalDetails();
+    public DoctorPersonalDetailsEntity register(DoctorPersonalDetailsRegisterDTO doctorPersonalDetailsRegisterDTO){
+        DoctorPersonalDetailsEntity doctorPersonalDetailsEntity = new DoctorPersonalDetailsEntity();
 
-        BeanUtils.copyProperties(doctorPersonalDetailsRegister,doctorPersonalDetails);
+        BeanUtils.copyProperties(doctorPersonalDetailsRegisterDTO, doctorPersonalDetailsEntity);
         log.info("------------------------------");
 
-        return doctorPersonalDetails;
+        return doctorPersonalDetailsEntity;
     }
 }

@@ -1,9 +1,12 @@
 package com.example.hospitalRecords.serviceInterface;
 
-import com.example.hospitalRecords.entity.DoctorPersonalDetails;
-import com.example.hospitalRecords.requestDTO.DoctorDesignationRegister;
-import com.example.hospitalRecords.requestDTO.DoctorPersonalDetailsRegister;
+import com.example.hospitalRecords.entity.DoctorPersonalDetailsEntity;
+import com.example.hospitalRecords.requestDTO.DoctorPersonalDetailsRegisterDTO;
+import com.example.hospitalRecords.responseDTO.DoctorsFullListDTO;
+
+import java.util.List;
 
 public interface DoctorPersonalDetailService {
-    DoctorPersonalDetails register(DoctorPersonalDetailsRegister doctorPersonalDetailsRegister);
+    DoctorPersonalDetailsEntity register(DoctorPersonalDetailsRegisterDTO doctorPersonalDetailsRegisterDTO);
+
 }

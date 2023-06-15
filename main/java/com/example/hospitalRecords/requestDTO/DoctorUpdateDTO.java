@@ -1,6 +1,5 @@
 package com.example.hospitalRecords.requestDTO;
 
-import jakarta.persistence.Column;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -9,7 +8,7 @@ import java.time.LocalDateTime;
 @Setter
 @Getter
 @ToString
-public class DoctorDesignationUpdate {
+public class DoctorUpdateDTO {
 
 
     private String name;

@@ -6,17 +6,20 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-    @ControllerAdvice
+import static org.hibernate.query.sqm.tree.SqmNode.log;
+
+@ControllerAdvice
     @ResponseStatus
     public class GlobalExceptionHandler {
         @ExceptionHandler(value = CustomException.class)
-        public ResponseEntity<?> exception(CustomException exception) {
-            String message = "Error Code" + " " + exception.getErrCode()+"---------> Error Message: " + exception.getErrMessage();
+        public ResponseEntity<ErrorResponse> exception(CustomException exception) {
+            log.info(exception.getErrCode()+", "+exception.getErrMessage());
+            ErrorResponse errorResponse = new ErrorResponse(exception.getErrCode(), exception.getErrMessage());
 
-            return new ResponseEntity<>(message, HttpStatus.OK);
+            return new ResponseEntity<>(errorResponse, HttpStatus.OK);
 
         }
-       @ExceptionHandler(value = Exception.class)
+      @ExceptionHandler(value = Exception.class)
         public ResponseEntity<?> commonException(Exception exception){
             String message = exception.toString();
 

@@ -1,28 +1,24 @@
 package com.example.hospitalRecords.requestDTO;
 
-import jakarta.persistence.Column;
 import lombok.*;
 
-import java.time.LocalDateTime;
-@Getter
 @Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class DoctorAddressRegister {
-
-    private Long regId;
-
-    private String name;
+public class DoctorAddressUpdateDTO {
 
 
     private Integer doorNo;
 
     private String streetName;
+
     private String city;
 
     private String state;
-    private String country;
 
+    private String country;
     private Long pinCode;
+
 }

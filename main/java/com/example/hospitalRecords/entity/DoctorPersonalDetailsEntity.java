@@ -1,13 +1,15 @@
 package com.example.hospitalRecords.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Pattern;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @AllArgsConstructor
@@ -15,7 +17,7 @@ import java.time.LocalDateTime;
 @Setter
 @Getter
 @ToString
-public class DoctorPersonalDetails {
+public class DoctorPersonalDetailsEntity {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name ="uuid2", strategy = "uuid2" )
@@ -32,7 +34,9 @@ public class DoctorPersonalDetails {
     private String motherName;
 
     @Column(nullable = false)
-    private String dateOfBirth;
+    //@Pattern(regexp="^[0-3]?[0-9]/[0-3]?[0-9]/(?:[0-9]{2})?[0-9]{2}$")
+    @JsonFormat(pattern="yyyy-MM-dd")
+    private LocalDate dateOfBirth;
 
     private Integer experience;
 

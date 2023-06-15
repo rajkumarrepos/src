@@ -1,8 +1,7 @@
 package com.example.hospitalRecords.serviceIMPL;
 
-import com.example.hospitalRecords.entity.DoctorsAddress;
-import com.example.hospitalRecords.requestDTO.DoctorAddressRegister;
-import com.example.hospitalRecords.requestDTO.DoctorDesignationRegister;
+import com.example.hospitalRecords.entity.DoctorsAddressEntity;
+import com.example.hospitalRecords.requestDTO.DoctorAddressRegisterDTO;
 import com.example.hospitalRecords.serviceInterface.DoctorAddressService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -10,10 +9,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class DoctorAddressServiceIMPL implements DoctorAddressService {
 
-    public DoctorsAddress register(DoctorAddressRegister doctorAddressRegister){
-        DoctorsAddress doctorsAddress = new DoctorsAddress();
+    public DoctorsAddressEntity register(DoctorAddressRegisterDTO doctorAddressRegisterDTO){
+        DoctorsAddressEntity doctorsAddressEntity = new DoctorsAddressEntity();
 
-        BeanUtils.copyProperties(doctorAddressRegister,doctorsAddress);
-        return doctorsAddress;
+        BeanUtils.copyProperties(doctorAddressRegisterDTO, doctorsAddressEntity);
+        return doctorsAddressEntity;
     }
 }

@@ -1,16 +1,17 @@
-package com.example.hospitalRecords.requestDTO;
+package com.example.hospitalRecords.responseDTO;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
-@ToString
-public class DoctorPersonalDetailsUpdate {
-
-
+public class DoctorsPersonalDetailsListDTO {
+    private Long regId;
 
     private String name;
 
@@ -18,7 +19,8 @@ public class DoctorPersonalDetailsUpdate {
 
     private String motherName;
 
-    private String dateOfBirth;
+
+    private LocalDateTime dateOfBirth;
 
     private Integer experience;
 

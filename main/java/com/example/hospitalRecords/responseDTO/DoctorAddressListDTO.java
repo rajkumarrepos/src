@@ -1,6 +1,5 @@
 package com.example.hospitalRecords.responseDTO;
 
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Setter
 @Getter
-public class DoctorAddressList {
+public class DoctorAddressListDTO {
 
     private Long regId;
     private Integer doorNo;

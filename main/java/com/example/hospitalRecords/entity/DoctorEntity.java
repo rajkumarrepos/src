@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Setter
 @Getter
 @ToString
-public class DoctorDesignation {
+public class DoctorEntity {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name ="uuid2", strategy = "uuid2" )
@@ -35,10 +35,10 @@ public class DoctorDesignation {
     private String emailId;
 
     @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    private DoctorPersonalDetails doctorPersonalDetails;
+    private DoctorPersonalDetailsEntity doctorPersonalDetailsEntity;
 
     @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    private DoctorsAddress doctorsAddress;
+    private DoctorsAddressEntity doctorsAddressEntity;
 
 
 }

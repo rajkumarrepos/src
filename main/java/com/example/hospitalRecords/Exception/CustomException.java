@@ -1,5 +1,7 @@
 package com.example.hospitalRecords.Exception;
+import lombok.ToString;
 
+@ToString
 public class CustomException extends RuntimeException{
     private static final long serialVersionUID = 1L;
     private String errCode;
@@ -30,6 +32,8 @@ public class CustomException extends RuntimeException{
     public void setErrMessage(String errMessage) {
         this.errMessage = errMessage;
     }
+
+
 
 
 }

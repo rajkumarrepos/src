@@ -1,17 +1,14 @@
 package com.example.hospitalRecords.requestDTO;
 
-import jakarta.persistence.Column;
 import lombok.*;
 
-import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
 @ToString
-public class DoctorPersonalDetailsRegister {
+public class DoctorPersonalDetailsUpdateDTO {
 
-    private Long regId;
 
 
     private String name;
@@ -24,7 +21,9 @@ public class DoctorPersonalDetailsRegister {
 
     private Integer experience;
 
+
     private String bloodGroup;
+
 
     private Long mobileNo;
 }

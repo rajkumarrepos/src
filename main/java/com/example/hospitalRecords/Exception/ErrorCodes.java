@@ -2,7 +2,7 @@ package com.example.hospitalRecords.Exception;
 
 public enum ErrorCodes {
 
-    CODE_602("ERROR MESSAGE");
+    CODE_602("ERROR MESSAGE"),CODE_603("Record Not found");
 
     public String message;
 

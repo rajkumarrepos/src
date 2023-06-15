@@ -1,18 +1,19 @@
 package com.example.hospitalRecords.responseDTO;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Column;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-import java.time.LocalDateTime;
-@AllArgsConstructor
-@NoArgsConstructor
+import java.time.LocalDate;
 @Setter
 @Getter
-public class DoctorsPersonalDetailsList {
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+public class DoctorPersonalDetailsReposeDTO {
+
     private Long regId;
+
 
     private String name;
 
@@ -20,8 +21,7 @@ public class DoctorsPersonalDetailsList {
 
     private String motherName;
 
-
-    private LocalDateTime dateOfBirth;
+    private LocalDate dateOfBirth;
 
     private Integer experience;
 
@@ -30,4 +30,5 @@ public class DoctorsPersonalDetailsList {
 
 
     private Long mobileNo;
+
 }

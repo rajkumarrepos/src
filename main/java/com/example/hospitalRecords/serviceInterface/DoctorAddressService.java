@@ -1,9 +1,8 @@
 package com.example.hospitalRecords.serviceInterface;
 
-import com.example.hospitalRecords.entity.DoctorsAddress;
-import com.example.hospitalRecords.requestDTO.DoctorAddressRegister;
-import com.example.hospitalRecords.requestDTO.DoctorDesignationRegister;
+import com.example.hospitalRecords.entity.DoctorsAddressEntity;
+import com.example.hospitalRecords.requestDTO.DoctorAddressRegisterDTO;
 
 public interface DoctorAddressService {
-    DoctorsAddress register(DoctorAddressRegister doctorAddressRegister);
+    DoctorsAddressEntity register(DoctorAddressRegisterDTO doctorAddressRegisterDTO);
 }

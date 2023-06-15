@@ -1,6 +1,7 @@
 package com.example.hospitalRecords.responseDTO;
 
 
+import com.example.hospitalRecords.entity.DoctorPersonalDetailsEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Setter
 @Getter
-public class DoctorsFullList {
+public class DoctorsFullListDTO {
 
 
     private Long regId;
@@ -26,4 +27,8 @@ public class DoctorsFullList {
     private LocalDateTime updatedDate;
 
     private String emailId;
+
+    private DoctorPersonalDetailsReposeDTO doctorPersonalDetailsReposeDTO;
+
+    private DoctorAddressResponseDTO doctorAddressResponseDTO;
 }
