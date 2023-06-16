@@ -44,11 +44,11 @@ public class DoctorDAOIMPL implements DoctorDAO {
     }
     @Override
      public Page<DoctorEntity> getAllDoctorsPage(Pageable pageable){
-        try {
+         try {
             Page<DoctorEntity> doctorEntityList = doctorRepository.findAll(pageable);
             return doctorEntityList;
-        } catch (Exception e) {
-            throw new CustomException(ErrorCodes.CODE_603.name(), ErrorCodes.CODE_603.getMessage());
+       } catch (Exception e) {
+           throw new CustomException(ErrorCodes.CODE_603.name(), ErrorCodes.CODE_603.getMessage());
         }
     }
 }

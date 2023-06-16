@@ -15,6 +15,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.springframework.data.domain.PageRequest.ofSize;
@@ -37,10 +38,9 @@ public class DoctorController {
         List<DoctorsFullListDTO> doctorsFullListDTOS=doctorService.getAll();
        return doctorsFullListDTOS;
     }
-    @GetMapping(value = "/getalldoctors/{page}/{size}")
-    public List<DoctorsFullListDTO> getBYPaging(@PathVariable (value = "page") int page, @PathVariable(value = "size") int size){
-
-        Pageable pageable = PageRequest.of(page,size);
+    @GetMapping(value = "/getalldoctors/{page}/{size}/{designation}")
+    public List<DoctorsFullListDTO> getBYPaging(@PathVariable (value = "page") int page, @PathVariable(value = "size") int size,@PathVariable(value="designation") String name){
+        Pageable pageable = PageRequest.of(page,size,Sort.by(name));
 
         List<DoctorsFullListDTO> doctorsFullListDTOS=doctorService.getAllDoctors(pageable);
 
