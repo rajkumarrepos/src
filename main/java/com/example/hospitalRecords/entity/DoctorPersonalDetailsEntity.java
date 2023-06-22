@@ -43,8 +43,8 @@ public class DoctorPersonalDetailsEntity {
     @Column(nullable = false,unique = true)
     private Long mobileNo;
 
-
-
+    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    private DoctorEntity doctorEntity;
 
 
 }

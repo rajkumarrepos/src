@@ -106,7 +106,7 @@ public class DoctorServiceIMPL implements DoctorService {
         return doctorsFullListDTOList;
     }
     @Override
-    public List<DoctorsFullListDTO> getAllDoctors(Pageable pageable){
+    public List<DoctorsFullListDTO> getAllDoctors(Pageable pageable) throws CustomException {
         Page<DoctorEntity> doctorEntityList =doctorDAO.getAllDoctorsPage(pageable);
 
         List<DoctorsFullListDTO> doctorsFullListDTOList = new ArrayList<>();

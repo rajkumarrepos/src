@@ -1,5 +1,6 @@
 package com.example.hospitalRecords.controller;
 
+import com.example.hospitalRecords.Exception.CustomException;
 import com.example.hospitalRecords.entity.DoctorEntity;
 import com.example.hospitalRecords.requestDTO.DoctorRegisterDTO;
 import com.example.hospitalRecords.responseDTO.DoctorResponseDTO;
@@ -38,9 +39,9 @@ public class DoctorController {
         List<DoctorsFullListDTO> doctorsFullListDTOS=doctorService.getAll();
        return doctorsFullListDTOS;
     }
-    @GetMapping(value = "/getalldoctors/{page}/{size}/{designation}")
-    public List<DoctorsFullListDTO> getBYPaging(@PathVariable (value = "page") int page, @PathVariable(value = "size") int size,@PathVariable(value="designation") String name){
-        Pageable pageable = PageRequest.of(page,size,Sort.by(name));
+    @GetMapping(value = "/getalldoctors/{page}/{size}/{column}")
+    public List<DoctorsFullListDTO> getBYPaging(@PathVariable (value = "page") int page, @PathVariable(value = "size") int size,@PathVariable(value="column") String column) throws CustomException {
+        Pageable pageable = PageRequest.of(page,size,Sort.by(column));
 
         List<DoctorsFullListDTO> doctorsFullListDTOS=doctorService.getAllDoctors(pageable);
 

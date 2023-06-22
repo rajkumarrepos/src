@@ -43,7 +43,7 @@ public class DoctorDAOIMPL implements DoctorDAO {
         }
     }
     @Override
-     public Page<DoctorEntity> getAllDoctorsPage(Pageable pageable){
+     public Page<DoctorEntity> getAllDoctorsPage(Pageable pageable) throws CustomException {
          try {
             Page<DoctorEntity> doctorEntityList = doctorRepository.findAll(pageable);
             return doctorEntityList;

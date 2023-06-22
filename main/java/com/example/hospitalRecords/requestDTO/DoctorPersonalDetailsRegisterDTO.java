@@ -15,6 +15,7 @@ public class DoctorPersonalDetailsRegisterDTO {
     @NotNull
     //@Max(13)
     //@Min(12)
+//    @Min(value = 4)
     private Long regId;
 
     @NotBlank
